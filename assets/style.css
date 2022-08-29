@@ -1,3 +1,19 @@
+h1 {
+display: flex;
+align-content: center;
+justify-content: center;
+background-color: rgb(40, 40, 164);
+color: aliceblue;
+font-family:Arial, Helvetica, sans-serif;
+padding: 12px;
+margin: 0;
+width: fluid;
 
+}
 
+#five-day-forcast {
+    display: flex;
+    align-items: flex-start;
+    background-color: blueviolet;
+}
 

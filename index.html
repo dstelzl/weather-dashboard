@@ -6,22 +6,24 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Weather Dashboard</title>
     <link rel="stylesheet" href="./assets/style.css" />
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/css/bootstrap.min.css">
 </head>
+<header>
+    <h1 class="container-fluid"> Weather Dashboard</h1>
+</header>
 <body>
-   <header>
-        <h1> Weather Dashboard</h1>
-       
-
-   </header>
+   
 
 
-    <div id="search-city">
-        <section class="inputs">
+    <div id="search-city" class= d-flex .mr-3 >
+        <form class="inputs">
             <input type="text" placeholder="Enter any city..." id="cityinput">
          
             <input type="submit" value="Submit" id="add">
-         </section>
+        </form>
+    </div>
     
+    <div>
         <section class="display">
             <div class=" ">
                 <h2 id="city"></h2>
@@ -31,11 +33,18 @@
         </section>
     </div>
   
-
-    <div id="day-one-temp"></div>
-    <div id="day-two-temp"></div>
+<section class = "row" id = "five-day-forcast">
+    <div class = "column" id="day-one-temp">DAY 1</div>
+    <div class = "column" id="day-two-temp">DAY 2 </div>
+    <div class = "column" id="day-three-temp">DAY 3</div>
+    <div class = "column" id="day-four-temp">DAY 4</div>
+    <div class = "column" id="day-five-temp">DAY 5</div>
+</section>
 <script src="./assets/script.js"></script>  
 
 
 </body>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.5.1/jquery.slim.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.16.1/umd/popper.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/twitter-bootstrap/4.5.0/js/bootstrap.min.js"></script>
 </html>
