@@ -3,7 +3,7 @@ var apiKey2 = '485bbc753e29e9770f09ca55c32c6d79' //instructor provided key
 var apiKey3 = '8a42d43f7d7dc180da5b1e51890e67dc'
 var currentTemp = document.getElementById('current-temp')
 var searchBtn = document.getElementById('add')   
-
+var searchForm = document. querySelector ("searchForm")
 function getCoordinates(event){
     event.preventDefault();
     var city =document.getElementById('cityinput').value
@@ -64,7 +64,7 @@ fetch  (weatherURL).then(response=>{ //another way to write the fetch function w
     displayCurrentWeather(data.current);
     displayForcastWeather(data.daily);
 })   
-
+//var weatherIcon = "http://openweathermap.org/img/wn" + icon + "@2x.png";
 }  
 
 // for the current weather in a city
@@ -82,7 +82,7 @@ function  displayForcastWeather(forcastWeather) {
         console.log(forcastWeather[i].humidity)
         console.log(forcastWeather[i].wind_speed)
         console.log(forcastWeather[i].uvi)
-        //var dayname = new Date(value.dt * 1000).toLocaleDateString(“en”, { weekday: “long”, });
+        var date = new Date(1661878800 * 1000).toLocaleDateString();  //FORMAT DATE
        // var futureDateEl = document.createElement('h3');
         //futureDateEl.textContent = 
         //document.body.appendChild(futureDateEl);
@@ -102,10 +102,20 @@ function  displayForcastWeather(forcastWeather) {
      };
         
 }
+//TO MAKE HISTORY BUTTONS RETURN WEATHER DATA
+var handleCityClick = function(event){
+    if (event.target.matches('button')){
+        
+    }
+    //button  =event.target.textContent;
+    event.preventDefault();
+    var city =document.getElementById('cityinput').value
+    console.log(city);
+    var geoURL = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
+}
 
-   
 
 getHistory()
 
 searchBtn.addEventListener('click', getCoordinates);
-button.addEventListener('click', displayCurrentWeather);
+//button.addEventListener('click', handleCityClick);
