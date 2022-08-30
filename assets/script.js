@@ -10,7 +10,7 @@ function getCoordinates(event) {
   event.preventDefault();
   var city = document.getElementById("cityinput").value;
   console.log(city);
-  var geoURL = `http://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
+  var geoURL = `https://api.openweathermap.org/geo/1.0/direct?q=${city}&appid=${apiKey}`;
 
   fetch(geoURL)
     .then(function (response) {
@@ -83,7 +83,7 @@ function displayCurrentWeather(currentWeather) {
     .getElementById("icon")
     .setAttribute(
       "src",
-      "http://openweathermap.org/img/wn/" +
+      "https://openweathermap.org/img/wn/" +
         currentWeather.weather[0].icon +
         ".png"
     );
@@ -119,7 +119,7 @@ function displayForcastWeather(forcastWeather) {
     var iconEl = document.createElement("img");
     iconEl.setAttribute(
       "src",
-      "http://openweathermap.org/img/wn/" +
+      "https://openweathermap.org/img/wn/" +
         forcastWeather[i].weather[0].icon +
         ".png"
     );
